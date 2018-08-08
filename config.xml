@@ -2,7 +2,8 @@
 <widget id="com.e3melbusiness" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>اعمل بيزنس</name>
     <description>
-
+        أكاديمية إعمل بيزنس، أول أكاديمية فى الوطن العربى متخصصة فى علوم وإدارة البيزنس،
+        هدفنا أن نكون شركاء في قصة نجاح العديد من أصحاب المشروعات المؤمنين بنا وبقدرتنا على إحداث تغيير في مسارهم المهني  .
     </description>
     <author email="dev@e3melbusiness.com" href="https://e3melbusiness.com">
         E3melbusiness Team
