@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.e3melbusiness" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.e3melbusiness.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>اعمل بيزنس</name>
     <description>
         أكاديمية إعمل بيزنس، أول أكاديمية فى الوطن العربى متخصصة فى علوم وإدارة البيزنس،
