@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Academy - Education, Courses, and Learning Mobile Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+	
+	<link rel="shortcut icon" href="img/favicon.png">
+	
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.transitions.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
+	<!--<link rel="stylesheet" href="css/style.css">-->
+	<link rel="stylesheet" href="css/style_rtl.css">
+	<link rel="stylesheet" href="css/select2.min.css">
+	<script type="text/javascript" src="cordova.js"></script>
+
+	
+</head>
+<body>
+
+<div w3-include-html="include/header.html"></div>
+
+	<!-- courses single-->
+	<div class="courses-single app-pages">
+		<div class="courses-iframe">
+			<img class="hidden" id="storyImageIframe" src="" alt="">
+
+			<iframe class="hidden" id="storyIframe" src="" frameborder="0" allowfullscreen></iframe>
+
+		</div>
+		<div class="container">
+			<div class="entry">
+				<h5 id="storyTitle"><img src="img/loading3.gif" /></h5>
+				<div class="thumb">
+					<img id="instructorImage" src="" alt="">
+				</div>
+				<div class="desc">
+					<h6><a id="instructorNname" href="#"></a></h6>
+					<span><i class="fa fa-calendar"></i> <span id="courseDate"></span> <i class="fa fa-eye"></i> <span id="storyViews"></span> مشاهدات</span>
+				</div>
+				<div class="description">
+					<h6>عن هذه القصه</h6>
+				</div>
+				<p id="storyDescription"><img src="img/loading2.gif"/></p>
+				<!--<div class="share">
+					<ul>
+						<li><h6>Share via :</h6></li>
+						<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>-->
+				<div class="author">
+					
+				</div>
+				<!--<div class="comment">
+					<h6>2 Comment</h6>
+					<div class="content">
+						<img src="img/comment1.png" alt="">
+						<div class="entry">
+							<strong><a href="#">John Doe</a></strong>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+						</div>
+					</div>
+					<div class="content">
+						<img src="img/comment2.png" alt="">
+						<div class="entry">
+							<strong><a href="#">John Doe</a></strong>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+						</div>
+					</div>
+				</div>-->
+				<!--<div class="post-comment">
+					<h6>Leave a Reply</h6>
+					<div class="content">
+						<form action="#">
+							<input type="text" placeholder="Name">
+							<input type="email" placeholder="Email">
+							<textarea cols="20" rows="10" placeholder="Comment"></textarea>
+							<button class="button">Post Comment</button>
+						</form>
+					</div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<!-- end courses single -->
+
+<div w3-include-html="include/footer.html"></div>
+	
+	<!-- script -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/index.js"></script>
+<script src="js/sucessStory.js"></script>
+<script>
+    successtories.singleStoryPage();
+</script>
+
+</body>
+</html>

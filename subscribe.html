@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Academy - Education, Courses, and Learning Mobile Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+	<link rel="shortcut icon" href="img/favicon.png">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+
+	<link rel="stylesheet" href="css/owl.transitions.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
+	<!--<link rel="stylesheet" href="css/style.css">-->
+	<link rel="stylesheet" href="css/style_rtl.css">
+	<link rel="stylesheet" href="css/select2.min.css">
+	<link type="text/css" href="css/new-landing-page.css" rel="stylesheet">
+    <script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+	<div w3-include-html="include/header.html"></div>
+	
+	<!-- login-->
+	<div class="login app-pages app-section">
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 center-table">
+            <h2 class="full-lines sm-font"><span class="black-font">الاشتراك فى أكاديمية إعمل بيزنس</span></h2>
+            <p class="grey-font md-font text-center">من فضلك أدخل بياناتك</p>
+            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 triangle-tabs">
+                
+                <div class="tab-content">
+				
+                    <div role="tabpanel" class="col-md-12 col-lg-12 col-xs-12 col-sm-12 tab-pane active dark-grey" id="subscription">
+                           
+                          
+                            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 center-table">
+									
+									
+									<form class="login-form  col-md-12 col-lg-12 col-xs-12 col-sm-12 center-table" action="#" method="post" id="subscription-form" name="subscription-form" novalidate="novalidate">
+									<div class="form-group">
+										
+                                        </div>
+                                        <input type="hidden" name="course_id" value="">
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                            <div class="alert alert-info" style="    text-align: center!important; direction: rtl;" role="alert">
+                                                أكاديمية إعمل بيزنس تحت مظلة    <strong>winwinbiz</strong>
+
+											</div>
+                                                                                 
+
+                                        </div>
+										<div class="form-group">
+										
+                                        </div>
+                                        <div class="form-group">
+                                            
+                                        </div>
+										<div class="form-group">
+										
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                            <div class="col-xs-6">
+											
+                                                    <label for="diploma">
+                                                        <input type="radio" class="subscription" name="subscription" id="diploma" value="diploma">
+                                                        دبلومة
+                                                    </label>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                    <label for="normal">
+                                                        <input type="radio" class="subscription" name="subscription" id="normal" value="normal" checked="checked">
+                                                        أفراد
+                                                    </label>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12 hidden" id="diploma_id_div">
+                                            <select style="height: 44px;text-align: right;  direction: rtl;" class=" form-control chosen-select" id="diploma_id" name="diploma_id" required="" aria-required="true">
+                                                <option value="">اختر الدبلومة</option>
+                                                                                                    <option value="49">دبلومة Entrepreneurship</option>
+                                                                                                    <option value="50">دبلومة Supply Chain</option>
+                                                                                                    <option value="51">دبلومة التسويق الإلكتروني</option>
+                                                                                                    <option value="52">دبلومة العلوم الإدارية</option>
+                                                                                                    <option value="53">دبلومة التسويق</option>
+                                                                                                    <option value="54">دبلومة البيع</option>
+                                                                                                    <option value="55">دبلومة HR</option>
+                                                                                                    <option value="56">دبلومة المحاسبة</option>
+                                                                                                    <option value="57">دبلومة خدمة العملاء</option>
+                                                                                                    <option value="58">دبلومة التسويق العقاري</option>
+                                                                                            </select>
+                                            <label for="diploma_id"></label>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12 " id="subscribe_period_div">
+
+                                            <select style="height: 44px;text-align: right;  direction: rtl;" class="form-control chosen-select valid" id="subscribe_period" name="subscribe_period" required="" aria-required="true" aria-invalid="false">
+                                                <option value="6">اشتراك 6 شهور</option>
+                                                <option value="12">اشتراك 12 شهور</option>
+                                            </select>
+                                            <label for="subscribe_period"></label>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+										    
+                                            <input class="textinput textInput form-control user-error" id="FullName" maxlength="64" minlength="2" name="FullName" placeholder="الاســم" required="True" type="text" aria-invalid="true" aria-required="true"> 
+											<label for="FullName"></label>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+										    
+                                            <input type="email" id="uemail" name="email" class="form-control" placeholder="البريد الإلكترونى">
+											<label for="uemail"></label>
+                                        </div>
+                                                   
+									   <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+																						
+												<div class="non-labeled col-lg-12 col-md-12 col-xs-12 col-sm-12 no-padding" id="form-item-phone">
+												<div class="form-group col-lg-4 col-md-4 col-xs-4 col-sm-4 no-padding">
+																						
+																								  
+												<select style="height: 44px;text-align: right;  direction: rtl;" class="form-control chosen-select" id="country" name="country" required="" aria-required="true">												
+												<option value="">اختر  الدولة</option>
+                                                 </select>																								
+																							  
+												 </div>
+												 
+																				  
+												<div class="col-lg-8 col-md-8 col-xs-8 col-sm-8 no-padding">						  
+												<div id="tooltip-reference-phone" class="tooltip-reference form-field pos-r">
+												<input class="emailinput form-control" id="Mobile" mailcheck="" maxlength="64" minlength="7" name="Mobile1" placeholder="الهاتف" required="True" type="text" aria-required="true">
+												<label for="Mobile"></label>
+												<div class="js-suggestion mt5 dn">
+												</div> 
+												</div>
+
+												</div>
+
+
+
+
+												</div>
+
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12" id="promotion_code_div">
+                                            <div class="input-group">
+
+                                                <input type="text" id="promotion_code" name="promotion_code" class="form-control" placeholder="كوبون الخصم">
+                                                <span class="input-group-addon tooltipstered" data-toggle="tooltip" id="basic-addon1">?</span>
+                                            </div>
+                                            <label for="promotion_code"></label>
+                                            <!--<div id="promotion_code_error"></div>-->
+                                        </div>
+										
+                                        <div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                            <div class="">
+                                                <button type="submit" class="btn orange-btn">اشتــرك الآن</button>
+                                            </div>
+											
+                                        </div>
+										<div class="form-group col-md-12 col-lg-12 col-xs-12 col-sm-12">
+											<div id="subscription-response">
+                                                
+                                            </div>
+											 </div>
+                                    </form>
+                                </div>
+                            </div>
+               
+                    </div>
+
+			   </div>
+            </div>
+			
+        </div>
+    </div>
+		
+	<style>	
+	label {
+    font-size: 15px;
+    color: #626262;
+}
+	[type="radio"]:not(:checked), [type="radio"]:checked{
+	left: auto !important;
+    opacity: 1 !important;
+position:relative;
+	}.form-group input[type=password], .form-group input[type=text], .form-group input[type=email]{
+	background:white;
+	font-size:12px;
+	}
+	
+	
+		
+	</style>	
+		
+	<!-- end login -->
+	<div w3-include-html="include/footer.html"></div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/subscribe.js"></script>
+
+
+</body>
+</html>

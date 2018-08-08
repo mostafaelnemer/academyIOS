@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academy - Education, Courses, and Learning Mobile Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/bootstrap_custom.min.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/style_rtl.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <style>
+        @font-face{font-family:UdemyIcons;src:url(fonts/udemy/UdemyIcons.woff2) format("woff2"),url(fonts/udemy/UdemyIcons.ttf) format("truetype"),url(fonts/udemy/UdemyIcons.woff) format("woff"),url(fonts/udemy/UdemyIcons.svg#UdemyIcons) format("svg");font-weight:400;font-style:normal}
+        #left-information{
+            position: absolute;
+            z-index: 9;
+            left: 0;
+            background: #f4f4f4;
+            display: none;
+            overflow: auto;
+        }
+        #open-left-info{
+            position: absolute;
+            left: 5px;
+            font-size: 25px;
+            z-index: 9;
+        }
+        .container-fluid,body,html{
+            background: white;
+        }
+        .playing{
+            color:#007dd0!important;
+        }
+        #continue{
+            position: absolute;
+            right: 0px;
+            bottom: 55px;
+            background: rgba(255, 0, 0, 0);
+            color: rgba(233, 231, 233, .5);
+            /*opacity: .3;*/
+            background-color: #0c9547;
+        }
+        #continue:hover,#backToCourse:hover{
+            color: rgba(233, 231, 233, 1);
+        }
+        #backToCourse{
+            position: absolute;
+            right: 0px;
+            top: 55px;
+            background: rgba(255, 0, 0, 0);
+            color: rgba(233, 231, 233, .5);
+            /*opacity: .3;*/
+            background-color: #0c9547;
+        }
+
+        .vjs-progress-control.vjs-control{
+            position: relative;
+            top: 14em;
+            margin-top: 0;
+            padding: .5em 0;
+            height: 1.7em;
+            left: 0em;
+            right: 0em;
+            -webkit-transition: top .4s,height .4s;
+            -moz-transition: top .4s,height .4s;
+            -ms-transition: top .4s,height .4s;
+            -o-transition: top .4s,height .4s;
+            transition: top .4s,height .4s;
+        }
+        .vjs-play-progress.vjs-slider-bar
+        {
+            background: #17aa1c;
+            height: 100% !important;
+        }
+
+        .vjs-progress-control.vjs-control .vjs-slider {
+            border-radius: .5em .5em .5em .5em;
+            /* background: hsla(0,0%,100%,.2);*/
+            background: hsla(0, 0%, 0%, 0.2);
+        }
+
+        .vjs-slider {
+            outline: 0;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            margin: 0 .45em;
+            background-color: #73859f;
+            background-color: rgba(115,133,159,.5);
+        }
+
+        .vjs-load-progress {
+            background: #707070;
+
+        }
+        .video-js.vjs-default-skin * {
+            box-sizing: border-box;
+        }
+
+
+        .vjs-progress-control.vjs-control .vjs-slider {
+            border-radius: .5em .5em .5em .5em;
+            background: hsla(0, 0%, 0%, 0.2);
+            height:100%;
+        }
+
+        .video-js {
+            display: block;
+            vertical-align: top;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: #000;
+            position: relative;
+            padding: 0;
+            font-size: 10px;
+            line-height: 1;
+            font-weight: 400;
+            font-style: normal;
+            font-family: Arial,Helvetica,sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .vjs-play-progress:before {
+            font-family: UdemyIcons;
+            content: "\E90A";
+            pointer-events: none;
+            font-size: 1.8em;
+            top: -.17em;
+            color: #fff;
+            text-shadow: -1px 1px 2px rgba(0,0,0,.2);
+            -webkit-transform: scale(.5);
+            -ms-transform: scale(.5);
+            -o-transform: scale(.5);
+            transform: scale(.5);
+            opacity: 0;
+            -webkit-transition: opacity .4s;
+            -moz-transition: opacity .4s;
+            -ms-transition: opacity .4s;
+            -o-transition: opacity .4s;
+            transition: opacity .4s;
+            -webkit-transition: -webkit-transform .4s;
+            -moz-transition: -moz-transform .4s;
+            -o-transition: -o-transform .4s;
+            transition: transform .4s;
+        }
+
+        .vjs-progress-control.vjs-control:hover .vjs-play-progress:before {
+            z-index: 3;
+            opacity: 1;
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .vjs-play-progress:before {
+            position: absolute;
+            top: -.33333333em;
+            right: -.5em;
+            font-size: .9em;
+        }
+        .vjs-play-progress:before {
+            opacity: 0;
+        }
+        .vjs-play-progress:before {
+            z-index: 1;
+        }
+        .video-js *, .video-js :after, .video-js :before {
+            box-sizing: inherit;
+        }
+        .vjs-progress-holder .vjs-play-progress, .video-js .vjs-progress-holder .vjs-tooltip-progress-bar {
+            position: absolute;
+            display: block;
+            height: .3em;
+            margin: 0;
+            padding: 0;
+            width: 0;
+            left: 0;
+            top: 0;
+        }
+
+        .playControl{
+            background: url(img/play.svg) no-repeat 55% center;
+            width: 24px;
+            height: 100%;
+            margin: 0 0 0 12px;
+            height: 15px;
+        }
+
+        .playControl.playing {
+            background-image: url(img/pause.svg);
+            background-position: center center;
+        }
+
+
+        .sc-ir {
+            border: 0;
+            font: 0/0 a;
+            text-shadow: none;
+            color: transparent;
+            background-color: transparent;
+        }
+
+        .skipControl__previous {
+            background-image: url(img/prev.svg);
+            background-position: 40% center;
+        }
+
+        .skipControl {
+            background-repeat: no-repeat;
+            padding: 0;
+        }
+
+        .playControls__control {
+            width: 24px;
+            height: 100%;
+            margin: 0 0 0 12px;
+        }
+
+        .skipControl__next {
+            background-image: url(img/skip.svg);
+            background-position: 60% center;
+        }
+
+        .skipControl {
+            background-repeat: no-repeat;
+            padding: 0;
+        }
+
+
+        .compactTrackList__list {
+            position: relative;
+        }
+        app-449c7d4c.css:1
+        .sc-list-nostyle {
+            list-style: none;
+            margin: 0;
+        }
+
+
+        .compactTrackListItem {
+            display: block;
+            position: relative;
+            color: #999;
+            line-height: 30px;
+            height: 30px;
+            padding-left: 5px;
+            outline: 0;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        @media (max-width: 768px){
+            .playControls-p{
+                margin-top: 20px;
+            }
+            .currenttime-p{
+                margin-top:2px !important;
+            }
+        }
+
+        .compactTrackListItem:not(.m-disabled).clickToPlay {
+            cursor: pointer;
+        }.sc-media, .sc-media-content, .sc-media-body {
+             overflow: hidden;
+         }
+        .sc-media, .sc-media-content, .sc-media-body {
+            overflow: hidden;
+        }
+        .sc-media, .sc-media-content, .sc-media-body {
+            overflow: hidden;
+        }
+        .sc-list-nostyle {
+            list-style: none;
+            margin: 0;
+        }
+
+        .sc-border-light-bottom {
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .compactTrackListItem__number, .compactTrackListItem__trackTitle {
+            color: #333;
+        }
+
+        .compactTrackListItem__number {
+            margin-right: 5px;
+        }
+        .compactTrackListItem__content {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            color: #333;
+        }
+        .sc-truncate {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: normal;
+        }
+
+        .compactTrackListItem__additional {
+            font-size: 10px;
+            padding: 0 5px 0 12px;
+        }
+
+        .g-flex-row-centered {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .g-flex-row-centered, .g-flex-row-centered-justify-center {
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .g-flex-row-centered {
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .g-flex-row-spread, .g-flex-row-centered {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .sc-ministats-small.sc-ministats-plays:before {
+            background-size: 16px 16px;
+            background-image: url(https://a-v2.sndcdn.com/assets/images/playback/play-91b117d.svg);
+            background-position: 0px 5px;
+        }
+
+        .sc-ministats.sc-ministats-small:before {
+            width: 16px;
+            height: 22px;
+        }
+
+        .sc-ministats:before {
+            display: inline-block;
+            content: "";
+            width: 16px;
+            height: 16px;
+            vertical-align: top;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .compactTrackListItem.clickToPlay.active, .compactTrackListItem.clickToPlay:hover, .compactTrackListItem.clickToPlay:focus {
+            background-color: #f2f2f2;
+            color: #999;
+        }
+
+        .compactTrackListItem.active, .compactTrackListItem.active .compactTrackListItem__number, .compactTrackListItem.active .compactTrackListItem__content, .compactTrackListItem.active .compactTrackListItem__trackTitle, .compactTrackListItem.active .compactTrackListItem__user, .compactTrackListItem.active .compactTrackListItem__plays {
+            color: #705eff;
+        }
+
+        .compactTrackListItem.free, .compactTrackListItem.free .compactTrackListItem__number, .compactTrackListItem.free .compactTrackListItem__content, .compactTrackListItem.free .compactTrackListItem__trackTitle, .compactTrackListItem.free .compactTrackListItem__user, .compactTrackListItem.free .compactTrackListItem__plays {
+            color: #22bb28;
+        }
+
+        .compactTrackListItem__content.sc-truncate{
+            direction:rtl;
+        }
+
+        h3.tab-title {
+            color: #0c9547;
+            font-weight: normal;
+            width: 100%;
+            text-align: right;
+            padding: 16px 11px 0px 0px;
+        }
+        .sound__trackList {
+            height: 600px;
+            overflow-y: auto;
+        }
+
+        .audio-progress {
+            height: .5rem;
+            width: 100%;
+            background-color: #C0C0C0;
+        }
+        .audio-progress .bar {
+            height: 100%;
+            background-color: #E95F74;
+        }
+
+        #audio-progress-handle {
+            display: block;
+            position:absolute;
+            z-index: 1;
+            margin-top: -5px;
+            margin-left: -10px;
+            width: 10px;
+            height: 10px;
+            border: 4px solid #D3D5DF;
+            border-top-color: #D3D5DF;
+            border-right-color: #D3D5DF;
+            transform: rotate(45deg);
+            border-radius: 100%;
+            background-color: #fff;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+            cursor:pointer;
+        }
+
+        .draggable {
+            float: left; margin: 0 10px 10px 0;
+        }
+
+        button#play {
+            position: absolute;
+            left: 39%;
+            top: -29%;
+            width: 48px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div w3-include-html="include/header.html"></div>
+
+<!-- courses single-->
+<div class="courses-single app-pages">
+
+
+    <div class="courses-iframe">
+        <iframe  id="courseIframe" class="sproutvideo-player" style="height: 50%;top:0px;z-index: 999; position: absolute;opacity: 0;" src="" frameborder="0" allowfullscreen ></iframe>
+        <button id="play" title="play" class="pull-left playControl playControls__control  sc-ir "></button>
+        <div class="vjs-progress-control vjs-control ">
+            <h3 id="courseVideoName" style="
+    text-align: center;
+    max-width: 80%;
+"></h3>
+            <div class="col-md-12" style="height:7px">
+                <div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal col-md-8" role="slider" aria-valuenow="34.70" aria-valuemin="0" aria-valuemax="100" aria-label="progress bar" aria-valuetext="1:19">
+                    <div class="vjs-play-progress vjs-slider-bar" data-current-time="0:00" style="width:1%;">
+                    </div>
+                </div>
+                <div id="posX"></div>
+                <div class="col-md-3 currenttime-p" style="margin-top: -7px;">
+                    <span class="currenttime">0:00</span>
+                    <span class="slash">/</span>
+                    <span class="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="col-md-3 playControls-p" style="height:30px">
+                <button class="pull-left playControls__control skipControl sc-ir  skipControl__previous " title="previous" id="player-prev"></button>
+                <!--<button id="play" title="play" class="pull-left playControl playControls__control  sc-ir "></button>-->
+                <button  title="next" class="pull-left skipControl sc-ir playControls__control  skipControl__next" id="player-next"></button>
+                <!--<button  id="saveData">saveData</button>-->
+            </div>
+
+        </div>
+    </div>
+    <div class="courses-menu">
+
+    </div>
+</div>
+<!-- end courses single -->
+
+<div w3-include-html="include/footer.html"></div>
+
+<!-- script -->
+
+<script src="js/materialize.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/select2.full.min.js"></script>
+<script src="js/bootstrap_custom.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/courses.js"></script>
+<script type="text/javascript" src="https://www.e3melbusiness.com/player_api.js"></script>
+<!--<script type="text/javascript" src="https://c.sproutvideo.com/player_api.js"></script>-->
+
+<script type="text/javascript" src="js/js.cookie.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+    courses.listenVideoPage();
+
+</script>
+
+</body>
+</html>
