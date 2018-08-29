@@ -162,6 +162,7 @@ function includeHTML() {
             xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4) {
+                    if (this.status == 0) {elmnt.innerHTML = this.responseText;}
                     if (this.status == 200) {elmnt.innerHTML = this.responseText;}
                     if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
                     /*remove the attribute, and call this function once more:*/
@@ -199,6 +200,9 @@ $(document).on('click','.goProfile',function(e){
     window.location.href="profile.html";
 });
 function onDeviceReady() {
+    $("[w3-include-html]").each(function(){
+        console.log("w3-include-html")
+    });
     if(userData){
         $("#login-menu,#register-menu,.loginLink").addClass('hidden');
         $("#logout-menu,.logoutLink").removeClass('hidden');
