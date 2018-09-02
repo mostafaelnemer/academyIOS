@@ -49,6 +49,7 @@ var errorMessages={
     "email_exist":"The Email Is Already Exist",
     "phone_exist":"The Phone Is Already Exist",
     "success":"Your Operation is success",
+    "Error_Password":"Wrong Password",
     "wrong_phone_or_password":"Wrong Phone Or Password",
     "user_not_active":"This User Not Active ",
     "user_id_required.":"User ID is required",
@@ -63,12 +64,68 @@ var errorMessages={
     "duration_required.":"Duration is required",
     "cost_required.":"Cost is required",
 };
+
+var db = window.openDatabase("academy_app.db", "1.0", "academy App", 200000);
+console.log(db);
+
+db.transaction(function(tx){
+    query='CREATE TABLE IF NOT EXISTS academy_app_user (id unique, email,password)';
+    tx.executeSql(query);
+    query='SELECT * FROM academy_app_user WHERE id=?';
+    tx.executeSql(query,[1],function(tx, res){
+        console.log(res.rows.length);
+
+        if(res.rows.length){
+            userDataDB=res.rows[0]
+            console.log(userDataDB);
+            console.log(userData);
+            if(!userData){
+                $.ajax({
+                    type: "POST",
+                    url: makeURL('login'),
+                    data: {"email":userDataDB.email,"password":userDataDB.password},
+                    success: function (msg) {
+                        $(".loader").hide();
+                        if(msg.success){
+                            window.sessionStorage.setItem("userData", JSON.stringify(msg.result));
+                            // window.location.href="index.html";
+                        }
+                    }
+
+                });
+            }
+
+
+        }
+
+    });
+    //console.log(query);
+},errorDB,successDB);
+function errorDB(tx, err) {
+    console.log("Error processing SQL: "+err);
+}
+
+// Transaction success callback
+//
+function successDB() {
+    console.log("success!");
+}
+
 function formatDate(date) {
     var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var day = date.getDate();
     var monthIndex = date.getMonth();
     var year = date.getFullYear();
     return monthNames[monthIndex] + ' ' + day + ',' + year;
+}
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 function strip_tags (html)
 {
@@ -128,6 +185,7 @@ function ajaxRequest(url,method,data,func){
 function getMessages(response,element){
     html='<div class="alert '+((response.success)?'alert-success':'alert-danger')+'">';
     message=response.message;
+    console.log(message)
     /*if(message.length==1){
         html+=((typeof errorMessages[message[0]]=='undefined')?message[0]:errorMessages[message[0]])+'</div>';
         $(element).html(html);
@@ -188,8 +246,15 @@ function IsJsonString(str) {
 includeHTML();
 $(document).on('click',"#logout-menu a,a.logoutLink",function(e){
     e.preventDefault();
-    window.sessionStorage.removeItem('userData');
-    window.location.reload();
+    db.transaction(function(tx){
+        query='DELETE FROM academy_app_user WHERE id=?';
+        tx.executeSql(query,[1]);
+        window.sessionStorage.removeItem("userData");
+        // window.location.href="index.html";
+        window.location.reload();
+
+    });
+
 });
 $(document).on('click','.goHome',function(e){
     e.preventDefault();
@@ -200,9 +265,6 @@ $(document).on('click','.goProfile',function(e){
     window.location.href="profile.html";
 });
 function onDeviceReady() {
-    $("[w3-include-html]").each(function(){
-        console.log("w3-include-html")
-    });
     if(userData){
         $("#login-menu,#register-menu,.loginLink").addClass('hidden');
         $("#logout-menu,.logoutLink").removeClass('hidden');
@@ -474,6 +536,7 @@ function onDeviceReady() {
         return returnArray;
     }
     if(filename=='login.html'){
+
         var loginValidator = $("#login-form").validate({
             errorPlacement: function(error, element) {
                 // Append error within linked label
@@ -506,13 +569,24 @@ function onDeviceReady() {
                 //alert('start');
                 //$("#charge-btn").attr("disabled", true);
                 ajaxRequest(makeURL('login'),'POST',$("#login-form").serialize(),function (msg) {
+                    password=$("#login-form #password").val();
+                    email=$("#login-form #email").val();
+
                     getMessages(msg,"#response")
                     $(".loader").hide();
                     if(msg.success){
-                        console.log(msg);
                         msg.result.password=$("#login-form #password").val();
-                        window.sessionStorage.setItem("userData", JSON.stringify(msg.result));
-                        window.location.href="index.html";
+
+                        db.transaction(function(tx){
+                            console.log('msg.success');
+                            console.log(msg);
+                            tx.executeSql('INSERT INTO academy_app_user (id, email,password) VALUES (1, ?,?)',[email,password]);
+                            window.sessionStorage.setItem("userData", JSON.stringify(msg.result));
+                            window.location.href="index.html";
+                        }, errorDB, successDB);
+                        // console.log(msg);
+                        // window.sessionStorage.setItem("userData", JSON.stringify(msg.result));
+                        // window.location.href="index.html";
                     }
                 });
                 /*$.ajax({

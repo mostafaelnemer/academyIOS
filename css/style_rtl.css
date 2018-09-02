@@ -1119,13 +1119,13 @@ p {
 /*===================
 	section, title and bg
 ===================*/
-.app-section {
-	padding: 30px 0 35px 0;
-}
+/*.app-section {*/
+	/*padding: 30px 0 35px 0;*/
+/*}*/
 
-.app-pages {
-	margin-top: 50px;
-}
+/*.app-pages {*/
+	/*margin-top: 50px;*/
+/*}*/
 
 .app-title {
 	margin-bottom: 20px;
@@ -2285,4 +2285,48 @@ button:hover:not(.skipControl):not(.playControl),a.button:hover{
 }
 #questions-answers .answer .date{
 	color:#ffffff;
+}
+
+
+
+/*search style*/
+.search{
+	width:70% !important;
+	height: 24px !important;
+	padding-top: 10px !important;
+	font-size: 19px !important;
+	margin: 0 0 22px 0;
+}
+#custom-search-input{
+	margin-top: 50px;
+	padding: 3px;
+	border: solid 1px #E4E4E4;
+	border-radius: 6px;
+	background-color: #fff;
+}
+
+#custom-search-input input{
+	border: 0;
+	box-shadow: none;
+}
+
+#custom-search-input button{
+	margin: 2px 0 0 0;
+	float: left;
+	background: none;
+	box-shadow: none;
+	border: 0;
+	color: #666666;
+	padding: 0 8px 0 10px;
+	border-right: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+	border: 0;
+	box-shadow: none;
+	border-right: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+	font-size: 23px;
 }
