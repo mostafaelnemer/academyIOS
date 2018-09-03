@@ -2308,6 +2308,8 @@ button:hover:not(.skipControl):not(.playControl),a.button:hover{
 #custom-search-input input{
 	border: 0;
 	box-shadow: none;
+	margin-bottom: 0;
+	padding-bottom: 25px;
 }
 
 #custom-search-input button{
