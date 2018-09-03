@@ -629,7 +629,7 @@ function onDeviceReady() {
         window.location.href="category-single.html";
     });
     /*click on diploma*/
-    $(document).on('click','.single-diploma a',function(e){
+    $(document).on('click','.single-diploma a[href!=\'https://www.e3melbusiness.com/subscriptions\']',function(e){
         e.preventDefault();
         diplomaID=$(this).data('id');
         console.log(diplomaID);
