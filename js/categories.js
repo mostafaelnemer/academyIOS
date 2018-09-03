@@ -118,7 +118,7 @@ categories ={
 
 
          // end links
-         /*$(document).on('click','.single-webinar a[href!=\'subscriptions.html\']',function(e){
+         /*$(document).on('click','.single-webinar a[href!=\'https://www.e3melbusiness.com/subscriptions\']',function(e){
              e.preventDefault();
              webinarID=$(this).data('id');
              console.log(webinarID);
@@ -126,7 +126,7 @@ categories ={
             // el.redirectToSingleCourse();
              window.location.href="webinar-single.html";
          });
-         $(document).on('click','.single-successtories a[href!=\'subscriptions.html\']',function(e){
+         $(document).on('click','.single-successtories a[href!=\'https://www.e3melbusiness.com/subscriptions\']',function(e){
              e.preventDefault();
              successtoriesID=$(this).data('id');
              console.log(successtoriesID);
@@ -134,7 +134,7 @@ categories ={
             // el.redirectToSingleCourse();
              window.location.href="sucessStory-single.html";
          });
-         $(document).on('click','.single-books a[href!=\'subscriptions.html\']',function(e){
+         $(document).on('click','.single-books a[href!=\'https://www.e3melbusiness.com/subscriptions\']',function(e){
              e.preventDefault();
              booksID=$(this).data('id');
              console.log(bookssID);
@@ -142,7 +142,7 @@ categories ={
             // el.redirectToSingleCourse();
              window.location.href="book-single.html";
          });
-         $(document).on('click','.single-workShops a[href!=\'subscriptions.html\']',function(e){
+         $(document).on('click','.single-workShops a[href!=\'https://www.e3melbusiness.com/subscriptions\']',function(e){
              e.preventDefault();
              workShopsID=$(this).data('id');
              console.log(workShopsID);
