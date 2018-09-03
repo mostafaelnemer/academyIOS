@@ -20,7 +20,7 @@ successtories ={
             html+='<span class=""><i class="fa fa-star"></i></span>';
         }
        // html+='</div><div class="price"><h5>'+singleStory.course_section.ksa_price+'$</h5></div></div></div>';
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleStory.view+'</div>'+((isExpired)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleStory.view+'</div>'+((isExpired)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
 
         return html;
     },

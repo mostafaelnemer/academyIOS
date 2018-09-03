@@ -166,8 +166,8 @@ categories ={
         for(y=x;y<=5;y++){
             html+='<span class=""><i class="fa fa-star"></i></span>';
         }
-        //html+='</div>'+((!singleCourse.hasCourse)?'<a href="subscriptions.html" class="button pull-left">اشترك الان</a>':'')+'<div class="price"><h5>'+singleCourse.ksa_price+'$</h5></div></div></div>';
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleCourse.view+'</div>'+((!singleCourse.hasCourse)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        //html+='</div>'+((!singleCourse.hasCourse)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button pull-left">اشترك الان</a>':'')+'<div class="price"><h5>'+singleCourse.ksa_price+'$</h5></div></div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleCourse.view+'</div>'+((!singleCourse.hasCourse)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
         return html;
     },
     singleCategoryWebinars:function(singleWebinar,isExpired){
@@ -182,7 +182,7 @@ categories ={
         for(y=x;y<=5;y++){
             html+='<span class=""><i class="fa fa-star"></i></span>';
         }
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleWebinar.view+'</div>'+((isExpired)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleWebinar.view+'</div>'+((isExpired)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
         return html;
     },
     singleCategorySuccesstories:function(singleStory,isExpired){
@@ -198,7 +198,7 @@ categories ={
             html+='<span class=""><i class="fa fa-star"></i></span>';
         }
         // html+='</div><div class="price"><h5>'+singleStory.course_section.ksa_price+'$</h5></div></div></div>';
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleStory.view+'</div>'+((isExpired)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleStory.view+'</div>'+((isExpired)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
         return html;
     },
     singleCategoryBooks:function(singleBook){
@@ -223,7 +223,7 @@ categories ={
         for(y=x;y<=5;y++){
             html+='<span class=""><i class="fa fa-star"></i></span>';
         }
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleWorkShop.view+'</div>'+((isExpired)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleWorkShop.view+'</div>'+((isExpired)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
         return html;
     },
     coursesByCat:function(singleCategory,isExpired){
@@ -240,7 +240,7 @@ categories ={
         }
 
         // html+='</div><div class="price"><h5>'+singleCategory.course_section.ksa_price+'$</h5></div></div></div>';
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleCategory.view+'</div>'+((isExpired)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleCategory.view+'</div>'+((isExpired)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
 
         return html;
     },

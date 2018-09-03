@@ -19,7 +19,7 @@ webinar ={
         for(y=x;y<=5;y++){
             html+='<span class=""><i class="fa fa-star"></i></span>';
         }
-        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleCourse.view+'</div>'+((isExpired)?'<a href="subscriptions.html" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
+        html+='</div><div class="views-count"><i class="fa fa-eye"></i>'+singleCourse.view+'</div>'+((isExpired)?'<a href="https://www.e3melbusiness.com/subscriptions" class="button btn-block text-center subscriptions-button">اشترك الان</a>':'')+'</div></div>';
         return html;
     },
     webinarPage:function(){
