@@ -12,8 +12,7 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
 
-    <preference name="StatusBarStyle" value="blackopaque" />
-    <preference name="StatusBarBackgroundColor" value="#05274a" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
         <icon density="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
